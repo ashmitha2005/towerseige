@@ -33,12 +33,12 @@ block9 = new Box(600,242,30,40);
 
 
 
-polygon = new Polygon(50,200,20);
+polygon = new Polygon(50,200,20,20);
 
 
 
 
-rubber= new Slingshot(this.polygon, {x:100, y:200});
+rubber= new Slingshot(polygon.body, {x:100, y:200});
 
 
 
@@ -51,24 +51,31 @@ function draw(){
    
 Engine.update(engine);
 
-
+fill("lightblue");
 block1.display();
 block2.display();
 block3.display();
 block4.display();
 block5.display();
-fill("lightblue");
+fill("lightpink");
 block6.display();
 block7.display();
 block8.display();
-fill("lightpink");
+fill("lightgreen");
 block9.display();
 base.display();
 polygon.display();
-fill("lightgreen");
 rubber.display();
 
 
 
 
+}
+
+function mouseDragged(){
+    Matter.Body.setPosition(polygon.body, {x:mouseX, y:mouseY});
+}
+
+function mouseReleased(){
+    rubber.fly();
 }

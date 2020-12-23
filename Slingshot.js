@@ -3,7 +3,7 @@ class Slingshot{
         var options = {
             bodyA: bodyA,
             pointB: pointB,
-            stiffness: 0.04,
+            stiffness: 0.1,
             length: 10
         }
         this.pointB = pointB
@@ -24,33 +24,20 @@ class Slingshot{
         if(this.sling.bodyA){
             var pointA = this.sling.bodyA.position;
             var pointB = this.pointB;
-            
-           // line(pointA.x, pointA.y, pointB.x, pointB.y);
-
-           push();
-           stroke(48,22,8);
-           if(pointA.x<220){
-            strokeWeight(7);
-            line(pointA.x, pointA.y, pointB.x, pointB.y);
+           strokeWeight(8); 
            line(pointA.x, pointA.y, pointB.x, pointB.y);
+
            
-
-           }else{
-            strokeWeight(3);
-            line(pointA.x, pointA.y, pointB.x, pointB.y);
-           line(pointA.x, pointA.y, pointB.x, pointB.y);
-          
            }
 
 
          
-          
+           
            
           
-           pop();
+         
 
 
         }
     }
     
-}
